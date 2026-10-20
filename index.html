@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Narpak Ambalaj | Özel Baskılı Islak Mendil</title>
+<meta name="description" content="Markanıza özel baskılı ıslak mendil ve kapsül mendil. Ordu’dan Türkiye’ye.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#D7152B; --red-dark:#A80F20; --ink:#232326; --gray:#76767B;
+  --line:#E3E3E6; --bg:#F5F5F6; --white:#fff;
+  --font:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--ink);background:var(--white);line-height:1.55;font-size:16px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+
+/* Üst bar */
+.top{background:var(--ink);color:#fff;font-size:14px;text-align:center;padding:8px 12px}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:24px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.01em}
+.brand img{width:44px;height:44px;border-radius:50%}
+.brand b{color:var(--red)}
+.nav nav{display:flex;gap:22px;margin-left:auto;font-weight:600;font-size:15px}
+.nav nav a:hover{color:var(--red)}
+.cart-btn{display:flex;align-items:center;gap:8px;background:var(--red);color:#fff;border:0;border-radius:999px;padding:10px 18px;font-weight:600}
+.cart-btn:hover{background:var(--red-dark)}
+.cart-btn span{background:#fff;color:var(--red);border-radius:999px;min-width:22px;height:22px;display:grid;place-items:center;font-size:13px;font-weight:800}
+
+/* Hero */
+.hero{background:var(--bg);padding:56px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(34px,5vw,60px);line-height:1.05;font-weight:800;letter-spacing:-.025em}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero p{margin:18px 0 28px;font-size:18px;color:var(--gray);max-width:46ch}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;border-radius:999px;padding:13px 26px;font-weight:600;border:2px solid var(--red);background:var(--red);color:#fff}
+.btn:hover{background:var(--red-dark);border-color:var(--red-dark)}
+.btn.ghost{background:transparent;color:var(--red)}
+.btn.ghost:hover{background:var(--red);color:#fff}
+.collage{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.collage img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px}
+.collage img:nth-child(1){grid-row:span 2;aspect-ratio:auto;height:100%}
+
+/* Rozet bandı */
+.facts{border-bottom:1px solid var(--line)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-top:22px;padding-bottom:22px}
+.facts div{font-size:14px;color:var(--gray)}
+.facts strong{display:block;color:var(--ink);font-size:16px}
+
+/* Ürünler */
+section{padding:64px 0}
+h2{font-size:clamp(26px,3.4vw,38px);letter-spacing:-.02em;line-height:1.1}
+.sub{color:var(--gray);margin-top:8px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0 28px}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 18px;font-weight:600;font-size:14px}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.card{border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;background:#fff}
+.card .ph{position:relative;background:var(--bg)}
+.card img{width:100%;aspect-ratio:1;object-fit:cover}
+.tag{position:absolute;left:12px;top:12px;background:var(--red);color:#fff;font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px}
+.card .body{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:18px;line-height:1.2}
+.card p{font-size:14px;color:var(--gray);flex:1}
+.price{font-weight:800;font-size:20px}
+.price small{font-weight:400;font-size:13px;color:var(--gray)}
+.card button{margin-top:8px;border:2px solid var(--ink);background:#fff;border-radius:10px;padding:10px;font-weight:600}
+.card button:hover{background:var(--ink);color:#fff}
+
+/* Nasıl çalışır */
+.steps{background:var(--ink);color:#fff}
+.steps .sub{color:#B9B9BE}
+.steps ol{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:32px;counter-reset:s}
+.steps li{counter-increment:s;border-top:3px solid var(--red);padding-top:14px}
+.steps li::before{content:counter(s);display:block;font-size:34px;font-weight:800;color:var(--red)}
+.steps strong{display:block;font-size:18px;margin:4px 0}
+.steps span{color:#B9B9BE;font-size:15px}
+
+/* İletişim */
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact form{display:grid;gap:12px}
+input,textarea,select{width:100%;font:inherit;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff}
+textarea{min-height:110px;resize:vertical}
+label{font-size:14px;font-weight:600}
+footer{background:var(--bg);padding:28px 0;font-size:14px;color:var(--gray)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* Sepet */
+.shade{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .2s;z-index:40}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(420px,100%);background:#fff;z-index:50;transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column}
+body.open .shade{opacity:1;pointer-events:auto}
+body.open .drawer{transform:none}
+.drawer header{position:static;display:flex;justify-content:space-between;align-items:center;padding:18px 20px}
+.drawer h2{font-size:22px}
+.x{border:0;background:none;font-size:28px;line-height:1}
+.items{flex:1;overflow:auto;padding:0 20px}
+.empty{color:var(--gray);padding:24px 0}
+.row{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.row img{width:64px;height:64px;object-fit:cover;border-radius:8px}
+.row b{display:block;font-size:15px;line-height:1.25}
+.row small{color:var(--gray)}
+.qty{display:flex;align-items:center;gap:6px;margin-top:4px}
+.qty button{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--line);background:#fff}
+.foot{padding:16px 20px 20px;border-top:1px solid var(--line);display:grid;gap:10px}
+.total{display:flex;justify-content:space-between;font-weight:800;font-size:18px}
+.foot .btn{text-align:center;border-width:2px;width:100%}
+.note{font-size:12px;color:var(--gray)}
+
+@media (max-width:820px){
+  .hero .wrap,.contact .wrap{grid-template-columns:1fr}
+  .facts .wrap,.steps ol{grid-template-columns:1fr 1fr}
+  .nav nav{display:none}
+  .cart-btn{margin-left:auto}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="top">Ordu’da ilk ve tek kapsül ıslak mendil üreticisi · Türkiye’nin her yerine kargo</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#"><img src="gorseller/logo.jpg" alt="Narpak Ambalaj logosu"><span>Nar<b>pak</b> Ambalaj</span></a>
+    <nav aria-label="Ana menü">
+      <a href="#urunler">Ürünler</a>
+      <a href="#nasil">Nasıl çalışır</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+    <button class="cart-btn" id="openCart" aria-label="Sepeti aç">Sepet <span id="count">0</span></button>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Markanız her sofrada, <em>her elde.</em></h1>
+      <p>Logonuz, telefonunuz ve QR kodunuzla özel baskılı ıslak mendil. Restoran, kafe, kurum ve etkinlikler için kaliteli ambalaj çözümleri.</p>
+      <div class="btns">
+        <a class="btn" href="#urunler">Ürünleri incele</a>
+        <a class="btn ghost" href="#iletisim">Teklif al</a>
+      </div>
+    </div>
+    <div class="collage" aria-hidden="true">
+      <img src="gorseller/sampiyon-kokorec.jpg" alt="">
+      <img src="gorseller/kotyora-tantuni.jpg" alt="">
+      <img src="gorseller/berliner-doner.jpg" alt="">
+    </div>
+  </div>
+</div>
+
+<div class="facts">
+  <div class="wrap">
+    <div><strong>Özel baskı</strong>Logo, adres, QR kod</div>
+    <div><strong>Hijyenik üretim</strong>Tek kullanımlık ambalaj</div>
+    <div><strong>Hızlı teslimat</strong>Onaydan sonra üretim</div>
+    <div><strong>Biyoçözünür seçenek</strong>Kapsül mendilde</div>
+  </div>
+</div>
+
+<section id="urunler">
+  <div class="wrap">
+    <h2>Ürünler</h2>
+    <p class="sub">Aşağıdakiler örnek çalışmalardır. Kendi tasarımınızla sipariş verebilirsiniz.</p>
+    <div class="filters" role="group" aria-label="Kategori filtresi">
+      <button class="chip" data-cat="all" aria-pressed="true">Tümü</button>
+      <button class="chip" data-cat="baskili" aria-pressed="false">Özel baskılı mendil</button>
+      <button class="chip" data-cat="kapsul" aria-pressed="false">Kapsül mendil</button>
+      <button class="chip" data-cat="standart" aria-pressed="false">Standart mendil</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="steps" id="nasil">
+  <div class="wrap">
+    <h2>Siparişiniz 4 adımda hazır</h2>
+    <p class="sub">Tasarımınız yoksa biz hazırlarız.</p>
+    <ol>
+      <li><strong>Ürünü seçin</strong><span>Sepete ekleyin, adedi belirleyin.</span></li>
+      <li><strong>Logonuzu gönderin</strong><span>Logo, telefon, adres ve QR kodunuzu iletin.</span></li>
+      <li><strong>Tasarımı onaylayın</strong><span>Baskı öncesi dijital önizleme alırsınız.</span></li>
+      <li><strong>Teslim alın</strong><span>Üretim sonrası kargoyla adresinize gelir.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="contact" id="iletisim">
+  <div class="wrap">
+    <div>
+      <h2>Teklif isteyin</h2>
+      <p class="sub">Adet, ölçü ve baskı rengine göre size özel fiyat çıkarıyoruz.</p>
+      <p style="margin-top:24px"><strong>Telefon / WhatsApp</strong><br><a href="tel:+905369856007">0536 985 60 07</a></p>
+      <p style="margin-top:12px"><strong>Instagram</strong><br><a href="https://www.instagram.com/narpakambalaj/" target="_blank" rel="noopener">@narpakambalaj</a></p>
+      <p style="margin-top:12px"><strong>Adres</strong><br>Ordu (adresinizi buraya yazın)</p>
+    </div>
+    <form id="quote">
+      <div><label for="qn">Ad soyad / firma</label><input id="qn" required></div>
+      <div><label for="qp">Telefon</label><input id="qp" type="tel" required></div>
+      <div><label for="qm">Mesajınız</label><textarea id="qm" placeholder="Örn. 5.000 adet, restoran logosu ve telefon numarası"></textarea></div>
+      <button class="btn" type="submit">WhatsApp ile gönder</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yil"></span> Narpak Ambalaj. Tüm hakları saklıdır.</span>
+    <span>Kaliteyi öncelik edinerek, ihtiyaçlarınıza profesyonel çözümler sunuyoruz.</span>
+  </div>
+</footer>
+
+<div class="shade" id="shade"></div>
+<aside class="drawer" id="drawer" aria-label="Sepet">
+  <header><h2>Sepetiniz</h2><button class="x" id="closeCart" aria-label="Kapat">×</button></header>
+  <div class="items" id="items"></div>
+  <div class="foot">
+    <div class="total"><span>Toplam</span><span id="total">₺0</span></div>
+    <div><label for="cn">Ad soyad / firma</label><input id="cn"></div>
+    <div><label for="cp">Telefon</label><input id="cp" type="tel"></div>
+    <button class="btn" id="order">Siparişi WhatsApp’tan gönder</button>
+    <p class="note">Ödeme ve baskı detayları WhatsApp üzerinden netleştirilir. Fiyatlar örnektir.</p>
+  </div>
+</aside>
+
+<script>
+/* ===== AYARLAR: burayı kendi bilgilerinize göre düzenleyin ===== */
+const WHATSAPP = "905369856007";   // ülke kodu ile, + ve boşluk olmadan
+const PRODUCTS = [
+  {id:1, ad:"Özel Baskılı Islak Mendil – Döner", cat:"baskili", img:"gorseller/berliner-doner.jpg", fiyat:2400, etiket:"Çok satan",
+   aciklama:"Çift yüz baskılı, altın varak görünümlü tasarım. Restoran ve büfeler için."},
+  {id:2, ad:"Özel Baskılı Islak Mendil – Kurum", cat:"baskili", img:"gorseller/otso-yelken.jpg", fiyat:2400,
+   aciklama:"Gümüş zemin üzerine tek renk logo. Kurum, oda ve dernekler için."},
+  {id:3, ad:"Özel Baskılı Islak Mendil – Tantuni", cat:"baskili", img:"gorseller/kotyora-tantuni.jpg", fiyat:2400,
+   aciklama:"Sipariş hattı, çalışma saatleri ve Instagram bilgisiyle tam renkli baskı."},
+  {id:4, ad:"Özel Baskılı Islak Mendil – Kokoreç", cat:"baskili", img:"gorseller/sampiyon-kokorec.jpg", fiyat:2400,
+   aciklama:"QR kod, telefon ve adres baskılı kırmızı ambalaj."},
+  {id:5, ad:"Özel Baskılı Islak Mendil – Medya", cat:"baskili", img:"gorseller/spor52.jpg", fiyat:2400,
+   aciklama:"Sosyal medya QR kodlu, tam renkli kampanya mendili."},
+  {id:6, ad:"Kapsül Islak Mendil", cat:"kapsul", img:"gorseller/kapsul-nizzy.jpg", fiyat:3200, etiket:"Ordu’da ilk ve tek",
+   aciklama:"Suyla açılan, biyoçözünür, kompakt kapsül. Pasta, kafe ve otel için."},
+  {id:7, ad:"Islak Mendil – Refreshing Towel", cat:"standart", img:"gorseller/islak-mendil.jpg", fiyat:1600,
+   aciklama:"Baskısız standart ambalaj. Stoktan hızlı teslim."}
+];
+const BIRIM = "1.000 adet";
+/* ================================================================ */
+
+const $ = s => document.querySelector(s);
+const tl = n => "₺" + n.toLocaleString("tr-TR");
+let cart = {};
+try { cart = JSON.parse(localStorage.getItem("narpak-cart") || "{}"); } catch(e) {}
+const save = () => { try { localStorage.setItem("narpak-cart", JSON.stringify(cart)); } catch(e) {} };
+
+function renderGrid(cat = "all"){
+  $("#grid").innerHTML = PRODUCTS.filter(p => cat === "all" || p.cat === cat).map(p => `
+    <article class="card">
+      <div class="ph"><img src="${p.img}" alt="${p.ad}" loading="lazy">${p.etiket ? `<span class="tag">${p.etiket}</span>` : ""}</div>
+      <div class="body">
+        <h3>${p.ad}</h3>
+        <p>${p.aciklama}</p>
+        <div class="price">${tl(p.fiyat)} <small>/ ${BIRIM}</small></div>
+        <button data-add="${p.id}">Sepete ekle</button>
+      </div>
+    </article>`).join("");
+}
+
+function renderCart(){
+  const ids = Object.keys(cart);
+  let total = 0, count = 0;
+  $("#items").innerHTML = ids.length ? ids.map(id => {
+    const p = PRODUCTS.find(x => x.id == id), q = cart[id];
+    total += p.fiyat * q; count += q;
+    return `<div class="row">
+      <img src="${p.img}" alt="">
+      <div><b>${p.ad}</b><small>${tl(p.fiyat)} / ${BIRIM}</small>
+        <div class="qty"><button data-dec="${id}" aria-label="Azalt">−</button><span>${q}</span><button data-inc="${id}" aria-label="Artır">+</button></div></div>
+      <b>${tl(p.fiyat * q)}</b></div>`;
+  }).join("") : `<p class="empty">Sepetiniz boş. Ürünlerden birini seçerek başlayın.</p>`;
+  $("#total").textContent = tl(total);
+  $("#count").textContent = count;
+  save();
+}
+
+document.addEventListener("click", e => {
+  const t = e.target;
+  if (t.dataset.add){ cart[t.dataset.add] = (cart[t.dataset.add] || 0) + 1; renderCart(); document.body.classList.add("open"); }
+  if (t.dataset.inc){ cart[t.dataset.inc]++; renderCart(); }
+  if (t.dataset.dec){ if(--cart[t.dataset.dec] <= 0) delete cart[t.dataset.dec]; renderCart(); }
+  if (t.classList.contains("chip")){
+    document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c === t));
+    renderGrid(t.dataset.cat);
+  }
+});
+$("#openCart").onclick = () => document.body.classList.add("open");
+$("#closeCart").onclick = $("#shade").onclick = () => document.body.classList.remove("open");
+document.addEventListener("keydown", e => { if (e.key === "Escape") document.body.classList.remove("open"); });
+
+function wa(text){ window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`, "_blank", "noopener"); }
+
+$("#order").onclick = () => {
+  const ids = Object.keys(cart);
+  if (!ids.length){ alert("Sepetiniz boş."); return; }
+  if (!$("#cn").value.trim() || !$("#cp").value.trim()){ alert("Lütfen ad ve telefon bilgilerinizi girin."); return; }
+  let t = "Merhaba, sipariş vermek istiyorum:\n\n", sum = 0;
+  ids.forEach(id => { const p = PRODUCTS.find(x => x.id == id); sum += p.fiyat * cart[id]; t += `• ${p.ad} × ${cart[id]} (${BIRIM})\n`; });
+  t += `\nToplam: ${tl(sum)}\nAd: ${$("#cn").value}\nTelefon: ${$("#cp").value}`;
+  wa(t);
+};
+$("#quote").onsubmit = e => {
+  e.preventDefault();
+  wa(`Merhaba, teklif almak istiyorum.\nAd/Firma: ${$("#qn").value}\nTelefon: ${$("#qp").value}\nMesaj: ${$("#qm").value}`);
+};
+
+$("#yil").textContent = new Date().getFullYear();
+renderGrid(); renderCart();
+</script>
+</body>
+</html>
